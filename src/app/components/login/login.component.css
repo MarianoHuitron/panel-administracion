@@ -1,0 +1,23 @@
+
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    background: rgb(188, 241, 163);
+}
+
+.flex-contain {
+    justify-content: center;
+    align-items: center;
+}
+
+.login {
+    max-width: 20rem;
+    margin: 0 auto;
+}
+
+input {
+    background: rgb(240, 254, 255);
+}
