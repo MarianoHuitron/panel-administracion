@@ -9,12 +9,18 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './services/auth.service';
 import { UserService } from './services/user.service';
+import { MenuComponent } from './components/shared/menu/menu.component';
+import { NavComponent } from './components/shared/nav/nav.component';
+import { ProductosComponent } from './components/productos/productos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    MenuComponent,
+    NavComponent,
+    ProductosComponent
   ],
   imports: [
     BrowserModule,

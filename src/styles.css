@@ -1,1 +1,55 @@
 /* You can add global styles to this file, and also import other style files */
+.flex {
+    display: flex;
+}
+.side {
+    width: 260px;
+    height: 100vh;
+    background: #505353;
+
+    -webkit-transition: width .5s, height .5s; 
+    transition: width .5s, height .5s;
+}
+
+.user {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: white;
+    background: rgb(55, 61, 61);
+}
+.enlace-menu {
+    background: rgba(0, 0, 0, 0);
+}
+.enlace-menu:hover {
+    background: #7a7a7a;
+}
+.active-link {
+    background: #9fa1a1;
+}
+
+
+.hide {
+    width: 0;
+    -webkit-transition: width .5s, height .5s; 
+    transition: width .5s, height .5s;
+}
+.hide-links {
+    display: none;
+}
+
+.w-100 {
+    width: 100%;
+    -webkit-transition: width .5s, height .5s; 
+    transition: width .5s, height .5s;
+}
+
+
+.content {
+    width: calc(100% - 260px);
+    height: 100vh;
+    background: rgb(38, 57, 61);
+    -webkit-transition: width .5s, height .5s; 
+    transition: width .5s, height .5s;
+}
