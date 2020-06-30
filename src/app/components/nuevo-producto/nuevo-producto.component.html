@@ -1,0 +1,76 @@
+<div class="flex">
+
+  <app-menu></app-menu>
+
+  <div class="content" id="content">
+    <app-nav></app-nav>
+
+    <div class="container mt-2">
+      <div class="alert alert-light" role="alert">
+        <div class="row">
+          <h1>Nuevo Producto</h1>
+          <button [routerLink]="['/productos']" routerLinkActive="router-link-active"  class="btn btn-large btn-secondary ml-auto" >
+            <i class="fas fa-backward"></i>
+            Regresar
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="card p-3">
+        
+        <div class="car-body">
+          <form [formGroup]="form" (ngSubmit)="save()">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="name">Nombre del producto</label>
+                  <input type="text" class="form-control" formControlName="name" id="name">
+                  <small class="text-muted"></small>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="price">Precio</label>
+                  <input type="number" class="form-control" formControlName="price">
+                  <small class="text-muted"></small>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="status">Status</label>
+                  <select formControlName="status" name="status" class="form-control" id="status">
+                    <option>Seleccione...</option>
+                    <option value="true">Disponible</option>
+                    <option value="false">No disponible</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="image">Imagen</label>
+                  <input type="file" class="form-control" formControlName="image" id="image" (change)="fileChange($event)">
+                </div>
+              </div>
+            </div>
+
+           <div class="row">
+            <div class="col-md-6 ml-auto">
+              <button type="submit" class="btn btn-secondary btn-block" [disabled]="!form.valid">Guardar</button>
+            </div>
+           </div>
+          </form>      
+        </div>
+      </div>
+        <div class="progress"  *ngIf="progress">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="" aria-valuemin="0" aria-valuemax="100" [ngStyle]="{'width': carga}"></div>
+        </div>
+    </div>
+
+  </div>
+
+</div>
+

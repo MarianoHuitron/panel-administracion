@@ -1,6 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+html {
+    box-sizing: border-box;
+    height: 100%;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
 .flex {
     display: flex;
+    flex-direction: row;
 }
 .side {
     width: 260px;
@@ -49,7 +61,13 @@
 .content {
     width: calc(100% - 260px);
     height: 100vh;
-    background: rgb(38, 57, 61);
+    overflow: auto;
+    /* background: rgb(38, 57, 61); */
+    background: rgb(223, 222, 222);
     -webkit-transition: width .5s, height .5s; 
     transition: width .5s, height .5s;
+}
+
+input {
+    background: rgb(240, 254, 255);
 }

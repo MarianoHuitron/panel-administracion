@@ -12,6 +12,7 @@ import { UserService } from './services/user.service';
 import { MenuComponent } from './components/shared/menu/menu.component';
 import { NavComponent } from './components/shared/nav/nav.component';
 import { ProductosComponent } from './components/productos/productos.component';
+import { NuevoProductoComponent } from './components/nuevo-producto/nuevo-producto.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ProductosComponent } from './components/productos/productos.component';
     HomeComponent,
     MenuComponent,
     NavComponent,
-    ProductosComponent
+    ProductosComponent,
+    NuevoProductoComponent
   ],
   imports: [
     BrowserModule,

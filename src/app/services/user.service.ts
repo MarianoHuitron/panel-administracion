@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class UserService {
 
   apiUrl = 'https://server-app-pedidos.herokuapp.com/user';
+  // apiUrl = 'http://localhost:3000/user';
 
   constructor(private http: HttpClient) { }
 
