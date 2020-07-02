@@ -13,6 +13,7 @@ import { MenuComponent } from './components/shared/menu/menu.component';
 import { NavComponent } from './components/shared/nav/nav.component';
 import { ProductosComponent } from './components/productos/productos.component';
 import { NuevoProductoComponent } from './components/nuevo-producto/nuevo-producto.component';
+import { EditarComponent } from './components/editar/editar.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { NuevoProductoComponent } from './components/nuevo-producto/nuevo-produc
     MenuComponent,
     NavComponent,
     ProductosComponent,
-    NuevoProductoComponent
+    NuevoProductoComponent,
+    EditarComponent
   ],
   imports: [
     BrowserModule,

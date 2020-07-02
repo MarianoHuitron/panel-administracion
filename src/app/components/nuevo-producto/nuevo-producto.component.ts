@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ProductoService } from '../../services/producto.service';
 import { HttpEventType } from '@angular/common/http';
+import * as toast from 'toastr'; 
 
 @Component({
   selector: 'app-nuevo-producto',
@@ -16,7 +17,8 @@ export class NuevoProductoComponent implements OnInit {
   progressValue = 0;
   carga: string = '0%';
 
-  constructor(public prodService: ProductoService) { 
+  constructor(public prodService: ProductoService) {
+    
     this.form = new FormGroup({
       name: new FormControl(null, Validators.required),
       price: new FormControl(null, [Validators.required, Validators.min(1)]),
@@ -26,6 +28,9 @@ export class NuevoProductoComponent implements OnInit {
   }
 
   ngOnInit() {
+    toast.options.closeButton = true;
+    toast.options.positionClass = 'toast-bottom-right';
+    
   }
 
   fileChange(element) {
@@ -36,6 +41,7 @@ export class NuevoProductoComponent implements OnInit {
 
 
   save() {
+    
     this.progress = true;
     let formData = new FormData();
 
@@ -57,9 +63,14 @@ export class NuevoProductoComponent implements OnInit {
           this.progressValue = 0;
           this.carga = '0%';
           this.form.reset();
+          toast.success('Producto guardado');
         }
       }, err => {
         console.log(err);
+        toast.error('No se pudo guardar');
+        this.carga = '0%';
+        this.progressValue = 0;
+        this.progress = false;
       })
   }
 }

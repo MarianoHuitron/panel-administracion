@@ -2,13 +2,13 @@
 
   <app-menu></app-menu>
 
-  <div class="content" id="content">
-    <app-nav></app-nav>
 
+  <div class="content">
+    <app-nav></app-nav>
     <div class="container mt-2">
       <div class="alert alert-light" role="alert">
         <div class="row">
-          <h1>Nuevo Producto</h1>
+          <h1>Editar Producto</h1>
           <button [routerLink]="['/productos']" routerLinkActive="router-link-active"  class="btn btn-large btn-secondary ml-auto" >
             <i class="fas fa-backward"></i>
             Regresar
@@ -17,23 +17,25 @@
       </div>
     </div>
 
+
+
     <div class="container">
       <div class="card p-3">
         
         <div class="car-body">
-          <form [formGroup]="form" (ngSubmit)="save()">
+          <form [formGroup]="form" (ngSubmit)="update()">
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="name">Nombre del producto</label>
-                  <input type="text" class="form-control" formControlName="name" id="name">
+                  <input type="text" class="form-control" formControlName="name" id="name" [value]="producto.name">
                   <small class="text-muted"></small>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="price">Precio</label>
-                  <input type="number" class="form-control" formControlName="price">
+                  <input type="number" class="form-control" formControlName="price" [value]="producto.price">
                   <small class="text-muted"></small>
                 </div>
               </div>
@@ -43,9 +45,9 @@
                 <div class="form-group">
                   <label for="status">Status</label>
                   <select formControlName="status" name="status" class="form-control" id="status">
-                    <option class="active" selected>Seleccione...</option>
-                    <option value="true">Disponible</option>
-                    <option value="false">No disponible</option>
+                    <option>Seleccione...</option>
+                    <option value="true" [selected]="producto.status == true">Disponible</option>
+                    <option value="false" [selected]="producto.status == false">No disponible</option>
                   </select>
                 </div>
               </div>
@@ -59,18 +61,19 @@
 
            <div class="row">
             <div class="col-md-6 ml-auto">
-              <button type="submit" class="btn btn-secondary btn-block" [disabled]="!form.valid || progress">Guardar</button>
+              <button type="submit" class="btn btn-secondary btn-block" [disabled]=" progress">Guardar</button>
             </div>
            </div>
           </form>      
         </div>
       </div>
         <div class="progress"  *ngIf="progress">
-          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="" aria-valuemin="0" aria-valuemax="100" [ngStyle]="{'width': carga}"></div>
+          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="" aria-valuemin="0" aria-valuemax="100" [ngStyle]="{'width': carga}" ></div>
         </div>
     </div>
+
+
 
   </div>
 
 </div>
-
